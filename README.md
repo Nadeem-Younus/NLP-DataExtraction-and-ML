@@ -1,2 +1,2 @@
 # NLP
-In this project I work on Python, PySpark, SparkSQL, Hive SQL.
+In this project I worked on Python, PySpark, SparkSQL, Hive SQL.
