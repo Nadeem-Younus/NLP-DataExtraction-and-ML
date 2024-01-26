@@ -6,4 +6,5 @@ Natural Language Processing techniques were used to get the context of the most 
     For example, 'battary' is a single word. All the related context of the 'battery' would be shown as, 
         (1) "please replace the battery ...", 
         (2) "My mobile phone battary is not charging ....", and so on. 
-Similar results will be shown for two words or three words, like, "iphone 12" or "monthly bill payment".
+Similar results will be shown for two words or three words, like, "account cancel" or "monthly bill payment".
+Tableau was used to see the interactive results based on output as shown above.
