@@ -1,5 +1,5 @@
 # NLP
-In this project I worked on large dateset of millions of customers.
+In this project I worked on large dateset of millions of customers - applied Pandas and NLP techniques, and ML algorithms.
 The customer and agent conversation text was transformed into actionable tables. 
 The context of the talk/chat between customer and agent was extracted.
 Natural Language Processing techniques were used to get the context of the most frequent words (single words, two words, three words). 
@@ -8,3 +8,4 @@ Natural Language Processing techniques were used to get the context of the most 
         (2) "My mobile phone battary is not charging ....", and so on. 
 Similar results will be shown for two words or three words, like, "account cancel" or "monthly bill payment".
 Tableau was used to see the interactive results based on output as shown above.
+Applied Machine Learning algorithm for unsupervised dataset, such as, Clustering (KMeans) to bring related into issues or concerns in buckets.
