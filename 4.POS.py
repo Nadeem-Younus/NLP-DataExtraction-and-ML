@@ -9,7 +9,7 @@ def pos_tag(tokens, tagset=None):
 
 POS_udf = udf(lambda tokens: [token for token in nltk.pos_tag(tokens)], ArrayType(ArrayType(StringType())))
 
-...
+... (some lines removed for originality of the code) ---
 
 POS_word_grammer = (POS_Gramm_1.withColumn("ar", split(col("POS_Gramm1"), ","))
                     .select('event_dt','chat_conversation_id','visitor_id','mtn', 
