@@ -38,21 +38,23 @@ cc_df1=spark.sql("""select event_dt, chat_conversation_id, visitor_id, mtn, cust
 
 cc_df2 = cc_df1.withColumn("customer_chat_text", functions.regexp_replace(cc_df1["customer_chat_text"], "[^\w]|\s+|_", " ")).withColumn("customer_chat_text", concat_ws(" ",col("customer_chat_text")))
 
-...
+# ... (some lines removed for originality of the code) ---
 
 bogusWordList = spark.sql("Select * from ##TableName##")
 
 df_clean = df_clean.withColumn("cust_chat_text", F.split("cust_chat_text", " "))
 
-....
+# ... (some lines removed for originality of the code) ---
 
 df_lookup_var = bogusWordList_lookup.groupBy("col1").agg(F.collect_set("column1").alias("column1")).collect()[0][1]
 
-x = ",".join(df_lookup_var)
+x = ",".join(df_lookup_var)  # some info removed for privacy.
 
 df_clean = df_clean.withColumn("filter_col", F.lit(x))
 
-....
+... (some lines removed for originality of the code) ---
+
+df_spark = df_clean.withColumn("customer_chat_text", array_join("ArrayColumn", " "))
 
 tokenizer = RegexTokenizer(inputCol="customer_chat_text", outputCol="wordTokens")
 
@@ -60,13 +62,14 @@ wordTokens_df = tokenizer.transform(df_spark)
 
 remover = StopWordsRemover(inputCol="wordTokens", outputCol="wordTokens_no_stopwords")
 
-....
+... (some lines removed for originality of the code) ---
+
 
 lmtzr = WordNetLemmatizer()
 
 lemma_udf = udf(lambda tokens: [lmtzr.lemmatize(token) for token in tokens], ArrayType(StringType()))
 
-....
+df_lemma = wordTokenNoStopw.withColumn("lemmatized", lemma_udf("wordTokens_no_stopwords"))#.select('id', 'words_stemmed')
 
 df_lemma = df_lemma.drop('wordTokens_no_stopwords')
 
@@ -78,8 +81,7 @@ ngram = NGram(n=2, inputCol="words", outputCol="ngrams")
 
 ngramDF = ngram.transform(df_final_words)
 
-....
-
-....
+... (some lines removed for originality of the code) ---
+     
 
 df_exp.orderBy('event_dt','chat_conversation_id','visitor_id','mtn',).show(20, truncate=False)
